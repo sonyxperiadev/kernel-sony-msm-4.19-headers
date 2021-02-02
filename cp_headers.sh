@@ -74,6 +74,8 @@ UAPI_HEADERS="\
     drm/drm_fourcc.h\
     drm/msm_drm_pp.h\
     drm/sde_drm.h\
+    drm/drm.h \
+    drm/drm_mode.h \
     asm-generic/ioctls.h"
 
 TECHPACK_UAPI_HEADERS="\
