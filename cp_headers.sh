@@ -31,6 +31,7 @@ UAPI_HEADERS="\
     linux/mdss_rotator.h\
     linux/rmnet_data.h\
     linux/rmnet_ipa_fd_ioctl.h\
+    linux/socket.h\
     linux/qseecom.h\
     linux/spcom.h\
     linux/v4l2-common.h\
