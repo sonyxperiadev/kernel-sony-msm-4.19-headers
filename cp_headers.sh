@@ -79,7 +79,7 @@ UAPI_HEADERS="\
     drm/drm_mode.h \
     asm-generic/ioctls.h"
 
-TECHPACK_UAPI_HEADERS="\
+TECHPACK_AUDIO_UAPI_HEADERS="\
     sound/audio_effects.h\
     sound/lsm_params.h\
     sound/devdep_params.h\
@@ -96,7 +96,26 @@ TECHPACK_UAPI_HEADERS="\
     linux/msm_audio_aac.h\
     linux/msm_audio.h"
 
-TECHPACK_IPC_HEADERS="\
+TECHPACK_CAMERA_UAPI_HEADERS="\
+    media/cam_cpas.h\
+    media/cam_custom.h\
+    media/cam_defs.h\
+    media/cam_fd.h\
+    media/cam_icp.h\
+    media/cam_isp.h\
+    media/cam_isp_ife.h\
+    media/cam_isp_tfe.h\
+    media/cam_isp_vfe.h\
+    media/cam_jpeg.h\
+    media/cam_lrme.h\
+    media/cam_ope.h\
+    media/cam_req_mgr.h\
+    media/cam_sensor.h\
+    media/cam_sync.h\
+    media/cam_tfe.h"
+
+
+TECHPACK_AUDIO_IPC_HEADERS="\
     voice_svc.h"
 
 cd ../../../..
@@ -114,14 +133,19 @@ cp $HEADER_SRC/"uapi/"$x $HEADER_ORI/$x
 $CLEAN_HEADER -u -v -k $HEADER_ORI -d $HEADER_SAN $x
 done
 
-for x in $TECHPACK_UAPI_HEADERS; do \
+for x in $TECHPACK_AUDIO_UAPI_HEADERS; do \
 cp $HEADER_SRC/"../techpack/audio/include/uapi/"$x $HEADER_ORI/$x
 $CLEAN_HEADER -u -v -k $HEADER_ORI -d $HEADER_SAN $x
 done
 
-for x in $TECHPACK_IPC_HEADERS; do \
+for x in $TECHPACK_AUDIO_IPC_HEADERS; do \
 cp $HEADER_SRC/"../techpack/audio/include/ipc/"$x $HEADER_ORI/sound/$x
 $CLEAN_HEADER -u -v -k $HEADER_ORI/sound -d $HEADER_SAN/sound $x
+done
+
+for x in $TECHPACK_CAMERA_UAPI_HEADERS; do \
+cp $HEADER_SRC/"../techpack/camera/include/uapi/"$x $HEADER_ORI/$x
+$CLEAN_HEADER -u -v -k $HEADER_ORI -d $HEADER_SAN $x
 done
 
 echo "Copy complete!"
