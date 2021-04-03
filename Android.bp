@@ -1,5 +1,5 @@
 cc_library_headers {
-    name: "qti_kernel_headers",
+    name: "qti_kernel_headers_4.19",
     vendor_available: true,
     export_include_dirs: ["kernel-headers"],
 }
