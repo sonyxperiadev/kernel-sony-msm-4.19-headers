@@ -40,23 +40,10 @@ UAPI_HEADERS="\
     linux/mmc/ioctl.h\
     linux/mmc/core.h\
     linux/mmc/mmc.h\
-    media/cam_defs.h\
-    media/cam_sensor.h\
-    media/cam_isp.h\
-    media/cam_isp_ife.h\
-    media/cam_isp_vfe.h\
-    media/cam_icp.h\
-    media/cam_cpas.h\
-    media/cam_fd.h\
-    media/cam_jpeg.h\
-    media/cam_lrme.h\
-    media/cam_req_mgr.h\
-    media/cam_sync.h\
     media/msm_camera.h\
     media/msm_cam_sensor.h\
     media/msm_camsensor_sdk.h\
     media/msm_fd.h\
-    media/msm_isp.h\
     media/msm_jpeg.h\
     media/msm_jpeg_dma.h\
     media/msmb_camera.h\
@@ -112,11 +99,19 @@ TECHPACK_CAMERA_UAPI_HEADERS="\
     media/cam_req_mgr.h\
     media/cam_sensor.h\
     media/cam_sync.h\
-    media/cam_tfe.h"
-
-
-TECHPACK_AUDIO_IPC_HEADERS="\
-    voice_svc.h"
+    media/cam_tfe.h\
+    media/cam_defs.h\
+    media/cam_sensor.h\
+    media/cam_isp.h\
+    media/cam_isp_ife.h\
+    media/cam_isp_vfe.h\
+    media/cam_icp.h\
+    media/cam_cpas.h\
+    media/cam_fd.h\
+    media/cam_jpeg.h\
+    media/cam_lrme.h\
+    media/cam_req_mgr.h\
+    media/cam_sync.h"
 
 cd ../../../..
 
@@ -136,11 +131,6 @@ done
 for x in $TECHPACK_AUDIO_UAPI_HEADERS; do \
 cp $HEADER_SRC/"../techpack/audio/include/uapi/"$x $HEADER_ORI/$x
 $CLEAN_HEADER -u -v -k $HEADER_ORI -d $HEADER_SAN $x
-done
-
-for x in $TECHPACK_AUDIO_IPC_HEADERS; do \
-cp $HEADER_SRC/"../techpack/audio/include/ipc/"$x $HEADER_ORI/sound/$x
-$CLEAN_HEADER -u -v -k $HEADER_ORI/sound -d $HEADER_SAN/sound $x
 done
 
 for x in $TECHPACK_CAMERA_UAPI_HEADERS; do \
