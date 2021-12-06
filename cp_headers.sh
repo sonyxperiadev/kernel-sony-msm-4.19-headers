@@ -120,22 +120,22 @@ lunch 38
 
 for x in $LINUX_HEADERS; do \
 cp $HEADER_SRC/$x $HEADER_ORI/$x
-$CLEAN_HEADER -u -v -k $HEADER_ORI -d $HEADER_SAN $x
+$CLEAN_HEADER -u -v -k $HEADER_ORI -d $HEADER_SAN $x &>out/cp_headers_4.19.log
 done
 
 for x in $UAPI_HEADERS; do \
 cp $HEADER_SRC/"uapi/"$x $HEADER_ORI/$x
-$CLEAN_HEADER -u -v -k $HEADER_ORI -d $HEADER_SAN $x
+$CLEAN_HEADER -u -v -k $HEADER_ORI -d $HEADER_SAN $x &>>out/cp_headers_4.19.log
 done
 
 for x in $TECHPACK_AUDIO_UAPI_HEADERS; do \
 cp $HEADER_SRC/"../techpack/audio/include/uapi/"$x $HEADER_ORI/$x
-$CLEAN_HEADER -u -v -k $HEADER_ORI -d $HEADER_SAN $x
+$CLEAN_HEADER -u -v -k $HEADER_ORI -d $HEADER_SAN $x &>>out/cp_headers_4.19.log
 done
 
 for x in $TECHPACK_CAMERA_UAPI_HEADERS; do \
 cp $HEADER_SRC/"../techpack/camera/include/uapi/"$x $HEADER_ORI/$x
-$CLEAN_HEADER -u -v -k $HEADER_ORI -d $HEADER_SAN $x
+$CLEAN_HEADER -u -v -k $HEADER_ORI -d $HEADER_SAN $x &>>out/cp_headers_4.19.log
 done
 
 echo "Copy complete!"
