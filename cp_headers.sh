@@ -113,6 +113,14 @@ TECHPACK_CAMERA_UAPI_HEADERS="\
     media/cam_req_mgr.h\
     media/cam_sync.h"
 
+HEADER_OVERRIDES="\
+    media/msm_media_info.h\
+    media/msm_vidc.h\
+    media/msm_vidc_utils.h\
+    linux/socket.h\
+    linux/v4l2-controls.h\
+    linux/videodev2.h"
+
 cd ../../../..
 
 source build/envsetup.sh
@@ -136,6 +144,10 @@ done
 for x in $TECHPACK_CAMERA_UAPI_HEADERS; do \
 cp $HEADER_SRC/"../techpack/camera/include/uapi/"$x $HEADER_ORI/$x
 $CLEAN_HEADER -u -v -k $HEADER_ORI -d $HEADER_SAN $x &>>out/cp_headers_4.19.log
+done
+
+for x in $HEADER_OVERRIDES; do \
+cp $HEADER_ORI/$x $HEADER_SAN/$x
 done
 
 echo "Copy complete!"
