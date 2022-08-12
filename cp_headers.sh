@@ -16,6 +16,7 @@ UAPI_HEADERS="\
     linux/msm_ion.h \
     linux/msm_mdp.h\
     linux/msm_mdp_ext.h\
+    linux/smcinvoke.h\
     linux/v4l2-mediabus.h\
     linux/esoc_ctrl.h\
     linux/msm_rmnet.h\
